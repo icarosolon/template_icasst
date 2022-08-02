@@ -8,7 +8,7 @@ const ErrorView({Key? key}) : super(key: key);
   Widget build(BuildContext context) {
     
     return Scaffold(
-      backgroundColor: Colors.amber[30],
+      backgroundColor: Colors.amber[50],
       body: Padding(
           padding: const EdgeInsets.only(bottom: 10),
           child: Column(
@@ -27,13 +27,33 @@ const ErrorView({Key? key}) : super(key: key);
                 ),
                 Container(
                   constraints: const BoxConstraints(maxWidth: 350, maxHeight: 250),
-                  child: /* Image.asset('assets/errors/erro_cancel.png',
-                    fit: BoxFit.contain,
-                  ), */
-                  SvgPicture.asset(
+                  child: SvgPicture.asset(
                     'assets/errors/erro_cancel.svg',
                   ),
                 ),
+                 Padding(
+                padding: const EdgeInsets.only(
+                    top: 38 ),
+                child: Container(
+                  height: 58,
+                  width: 58 ,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                          8 ),
+                      color: const Color(0xff132137),
+                    ),
+                    child: InkWell(
+                  key: const ValueKey('next button'),
+                  onTap: (){},
+                  child: 
+                  const Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Icon(Icons.arrow_forward_ios_rounded,
+                        color: Colors.white),
+                  ),
+                ),
+                  ),
+                  ),
             ],
           ),
         ),
